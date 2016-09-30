@@ -35,19 +35,19 @@ var marvel = marvelFactory({
 
 
 
-export default class MediaFetcher extends Component {
+export default class MediaFetcher2 extends Component {
   //constructor only gets executed once
     constructor(props) {  //allows you to set the initial state of the component
       super(props);
       this.state={
         media: []    //this is the initial state, needs to be empty at first
       }
-      this.getOneMedia()
+      this.getTwoMedia()
     }
 
-    getOneMedia(){  //put it in a function so that it only gets called once
+    getTwoMedia(){  //put it in a function so that it only gets called once
 
-      marvel('/characters/1009266/comics').then((response) => {
+      marvel('/characters/1010860/comics').then((response) => {
         if (response && response.status === "Ok") {
 
           this.setState({media: response.data.results});
@@ -61,33 +61,11 @@ export default class MediaFetcher extends Component {
       });
     }
     //if the query changed, call getOneMedia
-    componentWillReceiveProps (nextProps){
-    if (this.props.charName !== nextProps.charName){
-      this.getOneMedia(nextProps.charName);
-    }
-    }
-
-        getOneMedia(){  //put it in a function so that it only gets called once
-
-      marvel('/characters/1009301/comics').then((response) => {
-        if (response && response.status === "Ok") {
-
-          this.setState({media: response.data.results});
-          ///media comes back with response data in an array
-          console.log("Media ", this.state.media);
-        } else if (response && response.Response === "False") {
-          this.setState({media: "random number"});
-        } else {
-          console.error('Unknown error.');
-        }
-      });
-    }
-    //if the query changed, call getOneMedia
-    componentWillReceiveProps (nextProps){
-    if (this.props.charName !== nextProps.charName){
-      this.getOneMedia(nextProps.charName);
-    }
-    }
+    // componentWillReceiveProps (nextProps){
+    // if (this.props.charName !== nextProps.charName){
+    //   this.getOneMedia(nextProps.charName);
+    // }
+    // }
 
 
 

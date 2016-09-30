@@ -1,0 +1,11 @@
+body {
+	background-image: 'url("http://data.whicdn.com/images/80075084/superthumb.jpg")';
+  background-repeat: "repeat";
+  position: "fixed";
+  padding: "0";
+  margin: "0";
+  top: "0";
+  left: "0";
+   display: "block";
+  text-align: "center"
+}
